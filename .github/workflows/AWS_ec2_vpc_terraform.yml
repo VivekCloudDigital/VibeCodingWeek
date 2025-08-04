@@ -1,6 +1,7 @@
 name: Terraform AWS Deployment
 
 on:
+
   workflow_dispatch:
 
 jobs:
@@ -39,3 +40,4 @@ jobs:
         run: |
           cd aws
           terraform apply tfplan
+
