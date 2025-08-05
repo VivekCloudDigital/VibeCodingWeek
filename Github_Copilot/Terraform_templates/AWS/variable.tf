@@ -11,5 +11,6 @@ variable "instance_type" {
 }
 
 variable "ami_id" {
+  default     = "ami-0123456789abcdef0"
   description = "AMI ID for EC2 instance"
 }
