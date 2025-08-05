@@ -1,5 +1,3 @@
-variable "vpc_cidr" {}
-variable "public_subnet_cidr" {}
-variable "private_subnet_cidr" {}
-variable "az_public" {}
-variable "az_private" {}
+variable "cidr_block" {
+  description = "CIDR block for the VPC"
+}

@@ -1,3 +1,3 @@
-output "ec2_id" {
-  value = aws_instance.demo_ec2.id
+output "instance_id" {
+  value = aws_instance.web.id
 }

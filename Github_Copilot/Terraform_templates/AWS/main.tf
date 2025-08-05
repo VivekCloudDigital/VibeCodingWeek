@@ -1,21 +1,15 @@
 provider "aws" {
-  region     = var.region
-  access_key = var.access_key
-  secret_key = var.secret_key
+  region = var.region
 }
 
 module "vpc" {
-  source              = "./modules/vpc"
-  vpc_cidr            = "10.0.0.0/16"
-  public_subnet_cidr  = "10.0.1.0/24"
-  private_subnet_cidr = "10.0.2.0/24"
-  az_public           = "us-east-1a"
-  az_private          = "us-east-1b"
+  source = "./modules/vpc"
+  cidr_block = var.vpc_cidr
 }
 
 module "ec2" {
-  source        = "./modules/ec2"
-  ami           = "ami-0c94855ba95c71c99"
-  instance_type = "t2.micro"
-  subnet_id     = module.vpc.public_subnet_id
+  source = "./modules/ec2"
+  instance_type = var.instance_type
+  ami_id        = var.ami_id
+  subnet_id     = module.vpc.subnet_id
 }
