@@ -21,21 +21,21 @@ jobs:
 
       - name: Terraform Init
         run: |
-          cd VibeCodingWeek/Github_Copilot/Terraform_templates/AWS
+          cd Github_Copilot/Terraform_templates/AWS
           terraform init
 
       - name: Terraform Validate
         run: |
-          cd VibeCodingWeek/Github_Copilot/Terraform_templates/AWS
+          cd Github_Copilot/Terraform_templates/AWS
           terraform validate
 
       - name: Terraform Plan
         run: |
-          cd VibeCodingWeek/Github_Copilot/Terraform_templates/AWS
+          cd Github_Copilot/Terraform_templates/AWS
           terraform plan -out=tfplan
 
       - name: Terraform Apply
         if: github.event_name == 'workflow_dispatch'
         run: |
-          cd VibeCodingWeek/Github_Copilot/Terraform_templates/AWS
+          cd Github_Copilot/Terraform_templates/AWS
           terraform apply tfplan
