@@ -1,7 +1,6 @@
 name: Terraform AWS Deployment
 
 on:
-
   workflow_dispatch:
 
 jobs:
@@ -42,6 +41,7 @@ jobs:
           terraform apply tfplan
 
           //adding new line 
+
 
 
 
