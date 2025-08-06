@@ -1,3 +1,15 @@
-variable "instance_type" {}
-variable "ami_id" {}
-variable "subnet_id" {}
+variable "subnet_id" {
+  type = string
+}
+
+variable "sg_id" {
+  type = string
+}
+
+variable "ami_id" {
+  type = string
+}
+
+variable "instance_type" {
+  type = string
+}
