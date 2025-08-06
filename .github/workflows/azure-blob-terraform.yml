@@ -21,6 +21,11 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.5.7  # You can adjust this version as needed
+      - name: Setup StateFile Storage
+        run: |
+          az group create --name devops-resource-group --location eastus
+          az storage account create --name statefile --resource-group devops-resource-group --location eastus --sku Standard_LRS
+          az storage container create --name tfstate --account-name statefile
 
       - name: Terraform Init
         run: |
