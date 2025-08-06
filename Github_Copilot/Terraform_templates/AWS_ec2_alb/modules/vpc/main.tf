@@ -38,8 +38,8 @@ resource "aws_route_table_association" "b" {
 }
 
 resource "aws_security_group" "ec2_sg" {
-  name        = "ec2-sg"
-  vpc_id      = aws_vpc.main.id
+  name   = "ec2-sg"
+  vpc_id = aws_vpc.main.id
 
   ingress {
     from_port   = 22
@@ -64,8 +64,8 @@ resource "aws_security_group" "ec2_sg" {
 }
 
 resource "aws_security_group" "alb_sg" {
-  name        = "alb-sg"
-  vpc_id      = aws_vpc.main.id
+  name   = "alb-sg"
+  vpc_id = aws_vpc.main.id
 
   ingress {
     from_port   = 80
@@ -80,4 +80,3 @@ resource "aws_security_group" "alb_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}

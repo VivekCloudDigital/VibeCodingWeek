@@ -1,3 +1,4 @@
 variable "cidr_block" {
-  type = string
+  type        = string
+  description = "CIDR block for VPC"
 }
