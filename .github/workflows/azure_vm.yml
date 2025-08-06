@@ -18,7 +18,7 @@ jobs:
 
     - name: Terraform Init
       run: |
-          cd Github_Copilot/Terraform_templates/Azure _VM_LB
+          cd Github_Copilot/Terraform_templates/Azure_VM_LB/
           terraform init
 
     - name: Terraform Format Check
