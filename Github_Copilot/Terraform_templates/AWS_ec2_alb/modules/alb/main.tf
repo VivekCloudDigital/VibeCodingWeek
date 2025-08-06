@@ -1,5 +1,9 @@
+resource "random_id" "suffix" {
+  byte_length = 4
+}
+
 resource "aws_lb_target_group" "tg" {
-  name     = "terraform-tg"
+  name     = "terraform-tg-${random_id.suffix.hex}"  # ✅ Unique name
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
@@ -26,7 +30,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.alb_sg_id]
-  subnets            = var.subnet_ids
+  subnets            = var.subnet_ids  
 }
 
 resource "aws_lb_listener" "listener" {

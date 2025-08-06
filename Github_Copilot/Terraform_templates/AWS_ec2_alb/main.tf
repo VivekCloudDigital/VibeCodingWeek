@@ -8,11 +8,11 @@ module "vpc" {
 }
 
 module "ec2" {
-  source     = "./modules/ec2"
-  subnet_id  = module.vpc.subnet_ids[0]
-  sg_id      = module.vpc.ec2_sg_id
-  ami_id     = var.ec2_ami
-  instance_type = var.ec2_instance_type
+  source          = "./modules/ec2"
+  subnet_id       = module.vpc.subnet_ids[0]
+  sg_id           = module.vpc.ec2_sg_id
+  ami_id          = var.ec2_ami
+  instance_type   = var.ec2_instance_type
 }
 
 module "alb" {

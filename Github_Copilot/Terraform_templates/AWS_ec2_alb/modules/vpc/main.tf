@@ -39,7 +39,6 @@ resource "aws_route_table_association" "b" {
 
 resource "aws_security_group" "ec2_sg" {
   name        = "ec2-sg"
-  description = "Allow SSH and HTTP"
   vpc_id      = aws_vpc.main.id
 
   ingress {
@@ -66,7 +65,6 @@ resource "aws_security_group" "ec2_sg" {
 
 resource "aws_security_group" "alb_sg" {
   name        = "alb-sg"
-  description = "Allow HTTP"
   vpc_id      = aws_vpc.main.id
 
   ingress {
