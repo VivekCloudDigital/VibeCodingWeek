@@ -37,7 +37,7 @@ jobs:
       - name: Terraform Apply
         if: github.event_name == 'workflow_dispatch'
         run: |
-          cd Github_Copilot/Terraform_templates/dAWS_s3_vpc
+          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
           terraform apply tfplan
 
       - name: Terraform Destroy
