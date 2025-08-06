@@ -3,6 +3,10 @@ name: Deploy Azure Blob Storage with Terraform
 on:
   workflow_dispatch:
 
+permissions:
+    id-token: write
+    contents: read
+
 jobs:
   terraform:
     name: 'Terraform Deployment'
