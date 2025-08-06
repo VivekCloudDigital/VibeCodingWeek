@@ -28,11 +28,16 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      run: terraform plan
-
+      run: |
+          cd Github_Copilot/Terraform_templates/Azure_VM_LB/
+          terraform plan
+          
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve
+      run: |
+          cd Github_Copilot/Terraform_templates/Azure_VM_LB/
+          terraform apply -auto-approve
+          
       env:
         ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
         ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
