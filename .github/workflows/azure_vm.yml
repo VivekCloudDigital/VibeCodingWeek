@@ -2,8 +2,6 @@ name: Terraform Azure Linux VM Deployment
 
 on:
   workflow_dispatch:
-    branches:
-      - Rasesh1
 
 jobs:
   terraform:
