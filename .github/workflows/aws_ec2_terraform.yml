@@ -2,11 +2,7 @@ name: Terraform AWS Deployment
 
 on:
   workflow_dispatch:
-  inputs:
-      action:
-        description: 'Specify "destroy" to remove resources'
-        required: false
-        default: ''
+ 
 jobs:
   terraform:
     name: Terraform Workflow
