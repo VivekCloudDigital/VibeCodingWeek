@@ -39,3 +39,9 @@ jobs:
         run: |
           cd Github_Copilot/Terraform_templates/demo_aws
           terraform apply tfplan
+
+      - name: Terraform Destroy
+        if: ${{ github.event.inputs.action == 'destroy' }}
+        run: |
+          cd Github_Copilot/Terraform_templates/AWS
+          terraform destroy -auto-approve
