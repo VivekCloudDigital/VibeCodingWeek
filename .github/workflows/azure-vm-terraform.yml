@@ -21,7 +21,7 @@ jobs:
     - name: Terraform Init
       run: |
           pwd
-          cd Github_Copilot/Terraform_templates/Azure VM &LB/
+          cd VibeCodingWeek/Github_Copilot/Terraform_templates/Azure VM &LB/
           pwd
           terraform init
 
