@@ -45,3 +45,5 @@ jobs:
         run: |
           cd Github_Copilot/Terraform_templates/AWS_s3_vpc
           terraform destroy -auto-approve
+
+//demo
