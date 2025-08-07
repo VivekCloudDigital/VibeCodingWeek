@@ -44,10 +44,6 @@ resource "azurerm_subnet" "public" {
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vn.name
   address_prefixes     = var.pb_address_prefixes
-  tags = {
-    environment = "dev"
-    owner       = "devops"
-  }
 }
 
 resource "azurerm_subnet_network_security_group_association" "private" {
@@ -90,8 +86,4 @@ resource "azurerm_network_security_rule" "default_rules" {
   destination_address_prefix  = each.value.destination_address_prefix
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.sg.name
-  tags = {
-    environment = "dev"
-    owner       = "devops"
-  }
 }
