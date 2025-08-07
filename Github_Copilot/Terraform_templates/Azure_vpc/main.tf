@@ -17,7 +17,6 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.resource_group_location
-  }
 }
 
 # Azure Virtual Network Module
@@ -38,6 +37,7 @@ resource "azurerm_subnet" "private" {
   virtual_network_name = azurerm_virtual_network.vn.name
   address_prefixes     = var.pr_address_prefixes
   private_endpoint_network_policies = "Enabled"
+}
 
 resource "azurerm_subnet" "public" {
   name                 = var.pb_name
@@ -53,6 +53,7 @@ resource "azurerm_subnet" "public" {
 resource "azurerm_subnet_network_security_group_association" "private" {
   subnet_id                 = azurerm_subnet.private.id
   network_security_group_id = azurerm_network_security_group.sg.id
+}
 
 resource "azurerm_subnet_network_security_group_association" "public" {
   subnet_id                 = azurerm_subnet.public.id
