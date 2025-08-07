@@ -54,10 +54,6 @@ resource "azurerm_subnet_network_security_group_association" "private" {
 resource "azurerm_subnet_network_security_group_association" "public" {
   subnet_id                 = azurerm_subnet.public.id
   network_security_group_id = azurerm_network_security_group.sg.id
-  tags = {
-    environment = "dev"
-    owner       = "devops"
-  }
 }
 
 # Azure Network Security Group Module
