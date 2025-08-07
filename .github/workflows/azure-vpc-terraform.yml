@@ -38,6 +38,11 @@ jobs:
         run: |
           cd Github_Copilot/Terraform_templates/Azure_vpc/
           terraform destroy -auto-approve
+        env:
+        ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
       # Uncomment the following lines to enable automatic apply on push to main
       # - name: Terraform Apply
