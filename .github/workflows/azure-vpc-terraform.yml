@@ -34,6 +34,10 @@ jobs:
         run: |
           cd Github_Copilot/Terraform_templates/Azure_vpc/
           terraform apply -auto-approve
+      - name: Terraform Destroy
+        run: |
+          cd Github_Copilot/Terraform_templates/Azure_vpc/
+          terraform destroy -auto-approve
 
       # Uncomment the following lines to enable automatic apply on push to main
       # - name: Terraform Apply
