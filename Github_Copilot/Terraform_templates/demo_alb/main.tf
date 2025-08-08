@@ -102,7 +102,7 @@ resource "random_id" "suffix" {
 }
 
 resource "aws_lb_target_group" "tg" {
-  name     = "terraform-tg-${random_id.suffix.hex}" # ✔️ Unique name
+  name     = "terraform-tg-${random_id.suffix.hex}" 
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
@@ -123,7 +123,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = [aws_subnet.subnet_a.id, aws_subnet.subnet_b.id] # ✅ Two AZs
+  subnets            = [aws_subnet.subnet_a.id, aws_subnet.subnet_b.id] 
 }
 
 resource "aws_lb_listener" "listener" {
@@ -142,3 +142,4 @@ resource "aws_lb_target_group_attachment" "tg_attachment" {
   target_id        = aws_instance.web.id
   port             = 80
 }
+
