@@ -1,4 +1,4 @@
-name: Terraform AWS_ALB 
+name:  AWS_ALB Terraform
 
 on:
   workflow_dispatch:
