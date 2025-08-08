@@ -1,4 +1,4 @@
-name: Terraform AWS Deployment
+name:  AWS_ec2 Terraform Deployment
 
 on:
   workflow_dispatch:
@@ -21,29 +21,29 @@ jobs:
 
       - name: Terraform Init
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
+          cd Github_Copilot/Terraform_templates/AWS_ec2_alb
           terraform init
 
       - name: Terraform Validate
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
+          cd Github_Copilot/Terraform_templates/AWS_ec2_alb
           terraform validate
 
       - name: Terraform Plan
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
+          cd Github_Copilot/Terraform_templates/AWS_ec2_alb
           terraform plan -out=tfplan
 
       - name: Terraform Apply
         if: github.event_name == 'workflow_dispatch'
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
+          cd Github_Copilot/Terraform_templates/AWS_ec2_alb
           terraform apply tfplan
 
       - name: Terraform Destroy
         if: ${{ github.event.inputs.action == 'destroy' }}
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
+          cd Github_Copilot/Terraform_templates/AWS_ec2_alb
           terraform destroy -auto-approve
 
 
