@@ -9,8 +9,7 @@ terraform {
   }
 }
 
-provider = {
-  azure = azurerm
+provider "azurerm" {
   features {}
 }
 
