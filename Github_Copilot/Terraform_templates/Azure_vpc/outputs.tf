@@ -52,3 +52,8 @@ output "sg_name" {
   description = "The name of the Network Security Group"
   value       = azurerm_network_security_group.sg.name
 }
+
+output "web_app_url" {
+  description = "The default URL of the Web App"
+  value       = azurerm_linux_web_app.webapp.default_hostname
+}
