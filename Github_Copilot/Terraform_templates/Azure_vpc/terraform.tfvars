@@ -46,3 +46,7 @@ security_rules = {
     destination_address_prefix = "*"
   }
 }
+
+app_service_plan_name = "my-app-service-plan"
+web_app_name          = "my-nodejs-webapp"
+web_app_sku           = "B1"
