@@ -83,3 +83,31 @@ resource "azurerm_network_security_rule" "default_rules" {
   resource_group_name         = azurerm_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.sg.name
 }
+
+# Azure web app module
+resource "azure_app_service_plan" "app" {
+  name                 = var.app_service_plan_name
+  location             = azurerm_resource_group.rg.location
+  resource_group_name  = azurerm_resource_group.rg.name
+  kind                 = "Linux"
+
+  sku {
+    tier = "Basic"
+    size = var.web_app_sku
+  }
+
+  reserved = true
+}
+
+resource "azurerm_linux_web_app" "webapp" {
+  name                = var.web_app_name
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  service_plam_id     = azurerm_app_service_plan.app.id
+
+  site_config {
+    application_stack {
+      node_version - "18-lts"
+    }
+  }
+}
