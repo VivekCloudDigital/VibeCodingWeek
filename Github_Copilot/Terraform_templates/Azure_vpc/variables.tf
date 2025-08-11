@@ -66,3 +66,18 @@ variable "security_rules" {
     destination_address_prefix = string
   }))
 }
+
+variable "app_service_plan_name" {
+  description = "Name of the App Service Plan"
+  type        = string
+}
+
+variable "web_app_name" {
+  description = "Name of the Web App"
+  type        = string
+}
+
+variable "web_app_sku" {
+  description = "SKU for the App Service Plan"
+  type        = string
+}
