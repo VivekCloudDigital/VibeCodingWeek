@@ -21,29 +21,29 @@ jobs:
 
       - name: Terraform Init
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_ec2_vpc
+          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
           terraform init
 
       - name: Terraform Validate
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_ec2_vpc
+          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
           terraform validate
 
       - name: Terraform Plan
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_ec2_vpc
+          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
           terraform plan -out=tfplan
 
       - name: Terraform Apply
         if: github.event_name == 'workflow_dispatch'
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_ec2_vpc
+          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
           terraform apply tfplan
 
       - name: Terraform Destroy
         if: ${{ github.event.inputs.action == 'destroy' }}
         run: |
-          cd Github_Copilot/Terraform_templates/AWS_ec2_vpc
+          cd Github_Copilot/Terraform_templates/AWS_s3_vpc
           terraform destroy -auto-approve
 
 
