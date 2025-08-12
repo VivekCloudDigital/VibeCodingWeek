@@ -1,4 +1,4 @@
-name: Terraform AWS Deployment
+name: s3_aws_terraform Deployment
 
 on:
   workflow_dispatch:

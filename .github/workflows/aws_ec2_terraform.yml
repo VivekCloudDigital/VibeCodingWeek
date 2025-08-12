@@ -1,4 +1,4 @@
-name: Terraform AWS Deployment
+name: ec2_aws_terrfaorm Deployment
 
 on:
   workflow_dispatch:
