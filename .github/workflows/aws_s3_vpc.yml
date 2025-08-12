@@ -1,4 +1,4 @@
-name:  AWS_ec2 Deployment
+name:  s3_aws_terraform Deployment
 
 on:
   workflow_dispatch:
