@@ -1,3 +1,5 @@
+name:  node_js_beanstack deployment 
+
 stages:
   - zip
   - deploy
