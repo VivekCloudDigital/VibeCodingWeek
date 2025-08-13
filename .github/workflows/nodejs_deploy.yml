@@ -1,8 +1,7 @@
-name: Deploy to Elastic Beanstalk
+name: Service to Elastic Beanstalk
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -22,10 +21,11 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - name: Zip Node.js app
+    - name: Install dependencies and zip app
       run: |
-        cd app
-        zip -r nodejs-app.zip *
+        cd inought-service
+        npm install
+        zip -r inought-service.zip *
 
     - name: Terraform Init
       run: terraform -chdir=terraform init

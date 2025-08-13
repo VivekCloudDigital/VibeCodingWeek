@@ -3,5 +3,5 @@ variable "aws_region" {
 }
 
 variable "app_name" {
-  default = "nodejs-app"
+  default = "inought-service"
 }
